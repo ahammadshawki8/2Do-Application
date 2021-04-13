@@ -1,0 +1,32 @@
+@use "./abstract" as abs;
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: abs.$font-stack;
+    text-align: center;
+}
+
+h1 {
+    padding-top: 200px;
+    margin-bottom: 30px;
+    color: abs.$primary-color;
+}
+
+input {
+    width: 300px;
+    margin-bottom: 10px;
+}
+
+ul {
+    text-align: center;
+    display: inline-block;
+}
+
+li {
+    list-style: decimal-leading-zero;
+}

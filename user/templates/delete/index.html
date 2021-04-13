@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block body %}
+<h1>Delete Task</h1>
+<form action="{% url 'user:delete' %}" method="POST">
+    {% csrf_token %}
+    {{ form|linebreaks }}
+    <input type="submit">
+    <br>
+    <a href="{% url 'user:tasks' %}">Changed your decision</a>
+</form>
+{% endblock %}
