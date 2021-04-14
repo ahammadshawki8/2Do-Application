@@ -8,24 +8,83 @@
 body {
     font-family: abs.$font-stack;
     text-align: center;
+    display: flex;
+    justify-content: space-around;
+}
+
+.main {
+    width: 500px;
+    min-height: 300px;
+    margin-top: 150px;
+    background-color: abs.$primary-color;
+    border-radius: 20px;
+    padding: 30px;
 }
 
 h1 {
-    padding-top: 200px;
-    margin-bottom: 30px;
-    color: abs.$primary-color;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 40px;
+    color: abs.$secondary-color;
 }
 
 input {
     width: 300px;
     margin-bottom: 10px;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    margin-left: 5px;
 }
 
-ul {
+input[type="submit"]{
+    margin-top: 15px;
+    margin-bottom: 25px;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+    &:hover {
+        color: abs.$secondary-color;
+    }
+}
+
+.task-list {
     text-align: center;
     display: inline-block;
 }
 
-li {
-    list-style: decimal-leading-zero;
+
+.btn-group {
+    margin-top: 30px;
+    list-style: none;
+    .btn {
+        display: inline-block;
+        margin: 5px;
+        padding: 5px 10px;
+        background-color: abs.$secondary-color;
+        border-radius: 8px;
+
+        &:hover a{
+            color: abs.$primary-color;
+        }
+    }
+}
+
+
+@media screen and (max-width: 570px) {
+    .main {
+        width: 250px;
+        min-height: 200px;
+        margin: 100px 20px;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    input {
+        width: 100px;
+    }
 }

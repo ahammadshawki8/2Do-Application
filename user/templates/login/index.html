@@ -1,12 +1,14 @@
 {% extends "base.html" %}
 
 {% block body %}
-<h1>Login Form</h1>
-<form action="{% url 'user:index' %}" method="POST">
-    {% csrf_token %}
-    {{ form|linebreaks }}
-    <input type="submit">
-    <br>
-    <a href="{% url 'user:signup' %}">Don't have an account?</a>
-</form>
+<section class="main">
+    <h1>Login Form</h1>
+    <form action="{% url 'user:index' %}" method="POST">
+        {% csrf_token %}
+        {{ form|linebreaks }}
+        <input type="submit">
+        <br>
+        <a href="{% url 'user:signup' %}">Don't have an account?</a>
+    </form>
+</section>
 {% endblock %}
