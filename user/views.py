@@ -39,6 +39,9 @@ class UpdateTaskForm(forms.Form):
 
 # All Views
 def index(request):
+    return render(request, "user/index.html")
+
+def login(request):
     if request.method == "POST":
         form = LoginForm(request.POST)
         if form.is_valid():
@@ -47,11 +50,11 @@ def index(request):
             if database.logged_in(email,password):
                 return HttpResponseRedirect(reverse("user:tasks"))
         else:
-             return render(request, "login/index.html", {
+             return render(request, "user/login.html", {
                 "form": form
             })
 
-    return render(request, "login/index.html", {
+    return render(request, "user/login.html", {
         "form": LoginForm()
     })
 
@@ -66,17 +69,17 @@ def signup(request):
             database.signed_up(name, email, password)
             return HttpResponseRedirect(reverse("user:index"))
         else:
-            return render(request, "signup/index.html", {
+            return render(request, "user/signup.html", {
                 "form": form
             })
 
-    return render(request, "signup/index.html", {
+    return render(request, "user/signup.html", {
         "form": SignUpForm()
     })
 
 
 def tasks(request):
-    return render(request, "tasks/index.html", {
+    return render(request, "user/tasks.html", {
         "tasks": database.advanced_task_list()
     })
 
@@ -90,11 +93,11 @@ def add(request):
             database.add_new_task(priority, task_name)          
             return HttpResponseRedirect(reverse("user:tasks"))
         else:
-            return render(request, "add/index.html", {
+            return render(request, "user/add.html", {
                 "form": form
             })
 
-    return render(request, "add/index.html", {
+    return render(request, "user/add.html", {
         "form": AddTaskForm()
     })
 
@@ -107,11 +110,11 @@ def delete(request):
             database.delete_task(task_name)
             return HttpResponseRedirect(reverse("user:tasks"))
         else:
-            return render(request, "delete/index.html", {
+            return render(request, "user/delete.html", {
                 "form": form
             })
 
-    return render(request, "delete/index.html", {
+    return render(request, "user/delete.html", {
         "form": DeleteTaskForm()
     })
 
@@ -126,10 +129,10 @@ def update(request):
             database.update_task(old_task_name, new_task_name, new_priority)
             return HttpResponseRedirect(reverse("user:tasks"))
         else:
-            return render(request, "update/index.html", {
+            return render(request, "user/update.html", {
                 "form": form
             })
 
-    return render(request, "update/index.html", {
+    return render(request, "user/update.html", {
         "form": UpdateTaskForm()
     })

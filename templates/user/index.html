@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block body %}
+<section class="main">
+    <img class="main-img" src="{% static 'user/images/poster.jpg' %}" alt="poster">
+    <br>
+    <ul class="btn-group">
+        <li class="btn"><a href="{% url 'user:login' %}">Login</a></li>
+        <li class="btn"><a href="{% url 'user:signup' %}">SignUp</a></li>
+    </ul>
+</section>
+<style>
+    img {
+        width: 450px;
+    }
+    @media screen and (max-width: 570px) {
+        img {
+            width: 250px;
+        }
+    }
+</style>
+{% endblock %}
