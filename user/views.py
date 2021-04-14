@@ -67,7 +67,7 @@ def signup(request):
             email = form.cleaned_data["email"]
             password = form.cleaned_data["password"]
             database.signed_up(name, email, password)
-            return HttpResponseRedirect(reverse("user:index"))
+            return HttpResponseRedirect(reverse("user:login"))
         else:
             return render(request, "user/signup.html", {
                 "form": form

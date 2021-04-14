@@ -3,7 +3,7 @@
 {% block body %}
 <section class="main">
     <h1>Login Form</h1>
-    <form action="{% url 'user:index' %}" method="POST">
+    <form action="{% url 'user:login' %}" method="POST">
         {% csrf_token %}
         {{ form|linebreaks }}
         <input type="submit">

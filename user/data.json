@@ -40,28 +40,6 @@
             "email": "johndoe420@gmail.com",
             "password": "12345",
             "task_list": []
-        },
-        {
-            "name": "Jane Doe",
-            "email": "janedoe12@outlook.com",
-            "password": "jaX34",
-            "task_list": [
-                {
-                    "priority": 6,
-                    "task_name": "Check emails"
-                }
-            ]
-        },
-        {
-            "name": "Sakib Hasan",
-            "email": "sah75@teambd.com",
-            "password": "tiger75",
-            "task_list": [
-                {
-                    "priority": 10,
-                    "task_name": "5 Wickets"
-                }
-            ]
         }
     ]
 }
