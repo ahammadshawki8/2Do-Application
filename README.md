@@ -8,11 +8,13 @@ This is the very first application which I have created using Django and deploye
 Use this application on: [https://todo-application-as8.herokuapp.com/user/](https://todo-application-as8.herokuapp.com/user/)
 
 It is consist of:
+  - Cover Page
   - Login Page
   - SignUp Page
   - View Tasks Page
   - Add New Task Page
   - Delete Task Page
+  - Update Task Page
 
 <br>
 
