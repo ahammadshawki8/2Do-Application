@@ -1,4 +1,14 @@
-from .models import Person, Task
+import sys
+import os
+sys.path.append(os.getcwd())
+os.environ["DJANGO_SETTINGS_MODULE"] = "todo_app.settings"
+
+import django
+django.setup()
+
+from user.models import Person, Task
+
+
 
 class Constant:
     EMAIL = None
