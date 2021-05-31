@@ -5,7 +5,7 @@ A simple Django todo app that helps on managing daily tasks 📐
 
 This is the very first application which I have created using Django and deployed using Heroku. 
 
-Use this application on: [https://todo-application-as8.herokuapp.com/user/](https://todo-application-as8.herokuapp.com/user/)
+Use this application on: [https://todo-application-as8.herokuapp.com/](https://todo-application-as8.herokuapp.com/)
 
 It is consist of:
   - Cover Page
