@@ -1,45 +1,16 @@
 # Imports
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
-from django import forms
 from django.urls import reverse
-from . import database
-
-
-
-
-# Prerequisites
-class LoginForm(forms.Form):
-    email = forms.EmailField(label="Email Address ")
-    password = forms.CharField(label="Password ", widget=forms.PasswordInput)
-
-
-class SignUpForm(forms.Form):
-    name = forms.CharField(label="Fullname ")
-    email = forms.EmailField(label="Email Address ")
-    password = forms.CharField(label="Password ", widget=forms.PasswordInput)
-
-
-class AddTaskForm(forms.Form):
-    task = forms.CharField(label="Task Name ")
-    priority = forms.IntegerField(label="Priority ", min_value=0, max_value=10)
-
-
-class DeleteTaskForm(forms.Form):
-    task = forms.CharField(label="Task Name ")
-
-
-class UpdateTaskForm(forms.Form):
-    old_task = forms.CharField(label="Old Task Name ")
-    new_task = forms.CharField(label="New Task Name ")
-    new_priority = forms.IntegerField(label="Priority ", min_value=0, max_value=10)
-
+from user import database
+from user.forms import *
 
 
 
 # All Views
 def index(request):
     return render(request, "user/index.html")
+
 
 def login(request):
     if request.method == "POST":
@@ -63,10 +34,7 @@ def signup(request):
     if request.method == "POST":
         form = SignUpForm(request.POST)
         if form.is_valid():
-            name = form.cleaned_data["name"]
-            email = form.cleaned_data["email"]
-            password = form.cleaned_data["password"]
-            database.signed_up(name, email, password)
+            form.save(commit=True)
             return HttpResponseRedirect(reverse("user:login"))
         else:
             return render(request, "user/signup.html", {

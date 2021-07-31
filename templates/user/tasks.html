@@ -1,11 +1,13 @@
+<!DOCTYPE html>
 {% extends "base.html" %}
+{% load helpers %}
 
 {% block body %}
 <section class="main">
     <h1>Tasks</h1>
     <ol class="task-list">
         {% for task in tasks %}
-            <li class="task">{{ task }}</li>
+            <li class="task">{{ task|cut:"do" }}</li>
         {% empty %}
             <li class="task">No Task</li>
         {% endfor%}
